@@ -19,7 +19,18 @@
         <service
             android:name=".NotificationService"
             android:enabled="true"
-            android:exported="false"></service>
+            android:exported="false" />
+
+        <receiver
+            android:name=".AppStartReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="pub.nub.service.start" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+
+        </receiver>
     </application>
 
 </manifest>
